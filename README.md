@@ -19,6 +19,8 @@
 ## 💾 JSON 기반 일정 데이터 관리 (별도의 API 없음)
 
 ## 🧩 기술 스택
+| 구분 | 내용 |
+|------|------|
 | **Frontend** | React, TypeScript |
 | **Styling** | Tailwind CSS |
 | **State 관리** | React Hooks (`useState`, `useEffect`) |
@@ -27,13 +29,9 @@
 ---
 
 ## 🚀 실행 방법
-### 1. 프로젝트 클론
-git clone https://github.com/username/react-calendar.git
-cd react-calendar
-
-### 2. 패키지 설치
+### 1. 패키지 설치
 npm install
 
-### 3. 개발 서버 실행
+### 2. 개발 서버 실행
 npm run dev
 
