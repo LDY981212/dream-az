@@ -1,75 +1,39 @@
-# React + TypeScript + Vite
+# 🗓️ React Custom Calendar
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📍 프로젝트 소개
+이 프로젝트는 React + Tailwind CSS로 제작한 커스텀 달력 애플리케이션입니다.
+외부 달력 라이브러리를 사용하지 않고, 기본 JavaScript Date 객체만으로 달력 UI와 기능을 직접 구현했습니다.
+사용자는 날짜를 선택하고, 해당 날짜의 일정을 확인할 수 있습니다.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 주요 기능
+- 📅 기본 달력 기능 (년도, 월, 일, 요일 표시)
+- 🔁 이전/다음 달 이동
+- 🗓️ 날짜 선택 기능
+- 📝 선택한 날짜의 일정 목록 확인
+- 📖 일정 상세 보기
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 💾 JSON 기반 일정 데이터 관리 (별도의 API 없음)
 
-Note: This will impact Vite dev & build performances.
+## 🧩 기술 스택
+| **Frontend** | React, TypeScript |
+| **Styling** | Tailwind CSS |
+| **State 관리** | React Hooks (`useState`, `useEffect`) |
+| **데이터** | 로컬 JSON 파일 (`mockData.json`) |        
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 실행 방법
+### 1. 프로젝트 클론
+git clone https://github.com/username/react-calendar.git
+cd react-calendar
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 2. 패키지 설치
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 3. 개발 서버 실행
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
